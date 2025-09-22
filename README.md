@@ -1,3 +1,7 @@
+## Live Demo
+
+Check out the live version of this project here: [Forex Beacon Live Site](https://batmannotfound-ai.github.io/Forex-Beacon-repo/)
+
 # ForexBeacon
 A front-end Forex trading website built using HTML, CSS, and JavaScript. The website provides users with real-time market data, economic events, live charts, and AI support to enhance the trading experience.
 
