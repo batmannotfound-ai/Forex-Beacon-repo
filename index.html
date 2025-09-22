@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ForexBeacon</title>
+  <link rel="icon" href="Assets/Favicon.png" type="image/png" sizes="32x32" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="top-right">
+
+        <!-- Google Translate -->
+        <div id="google_translate_element" style="display:none;"></div>
+
+        <div class="notranslate">
+          <div class="custom-dropdown" id="customDropdown" tabindex="0" aria-haspopup="listbox" aria-expanded="false"
+            role="combobox" aria-controls="langList">
+            <div class="dropdown-header" id="dropdownHeader">
+              <img width="22" height="22" src="https://img.icons8.com/ios/50/FFFFFF/globe--v1.png" alt="Globe Icon">
+              <span class="lang-text" id="selectedLangText">Language</span>
+              <span class="arrow-icon" id="arrowIcon">&#9660;</span>
+            </div>
+            <div class="dropdown-list" id="langList" role="listbox" aria-labelledby="dropdownHeader" tabindex="-1">
+              <div class="dropdown-item" data-value="en" role="option" tabindex="0" aria-selected="false">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/1200px-Flag_of_the_United_Kingdom_%283-5%29.svg.png?20230715230526"
+                  alt="UK Flag" class="flag-icon" />
+                EN
+              </div>
+              <div class="dropdown-item" data-value="hi" role="option" tabindex="-1" aria-selected="false">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg" alt="India Flag"
+                  class="flag-icon" />
+                HIN
+              </div>
+              <div class="dropdown-item" data-value="fr" role="option" tabindex="-1" aria-selected="false">
+                <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="France Flag"
+                  class="flag-icon" />
+                FR
+              </div>
+              <div class="dropdown-item" data-value="de" role="option" tabindex="-1" aria-selected="false">
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg" alt="Germany Flag"
+                  class="flag-icon" />
+                GER
+              </div>
+              <div class="dropdown-item" data-value="es" role="option" tabindex="-1" aria-selected="false">
+                <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg" alt="Spain Flag"
+                  class="flag-icon" />
+                ES
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Top Bar Links -->
+        <a href="Convert/convert.html"><i class="fas fa-calculator"></i> Convert </a>
+        <a href="Contact/contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+        <a href="Support/support.html" target="_blank"><i class="fas fa-headset"></i> Support </a>
+        <a href="FAQ/FAQ.html"><i class="fas fa-question-circle"></i> FAQs</a>
+      </div>
+    </div>
+
+
+    <!-- Navigation Bar -->
+
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+
+      <div class="logo" tabindex="0"><img src="Assets/logo.png" alt="Logo"></div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" tabindex="0"><i class="fas fa-home" aria-hidden="true"></i>Home</a>
+        <!-- <a href="#" class="nav-link" tabindex="0"><i class="fas fa-book" aria-hidden="true"></i>Learn Forex</a> -->
+        <!-- <a href="#" class="nav-link" tabindex="0"><i class="fas fa-chess-rook" aria-hidden="true"></i>Strategies</a> -->
+        <a href="Calendar/calendar.html" class="nav-link" tabindex="0"><i class="fas fa-calendar-alt"
+            aria-hidden="true"></i>Calendar</a>
+        <a href="Chart/chart.html" class="nav-link" tabindex="0"><i class="fas fa-chart-line"
+            aria-hidden="true"></i>Chart</a>
+        <a href="News/news.html" class="nav-link" tabindex="0"><i class="fas fa-newspaper"
+            aria-hidden="true"></i>News</a>
+        <a href="About/About.html" class="nav-link" tabindex="0"><i class="fas fa-info-circle"
+            aria-hidden="true"></i>About Us</a>
+      </div>
+
+      <!-- Log-In Button -->
+      <button class="login-button" type="button" aria-label="Login/Register"
+        onclick="window.location.href='Log_Reg/LogReg.html';">
+        <i class="fas fa-right-to-bracket" aria-hidden="true"></i> Log-In/Sign-Up
+      </button>
+
+      <!-- Hamburger Menu -->
+      <div class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Dark Mode Toggle -->
+      <div id="darkmode">
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="checkbox-label">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+          <span class="ball"></span>
+        </label>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- HERO SECTION 1 -->
+  <section class="hero" role="banner" aria-label="Trading hero section with animated candlestick chart background">
+    <canvas id="chart-bg" aria-hidden="true"></canvas>
+    <div class="content">
+      <h1 class="slogan">Trade Smarter, Grow Faster</h1>
+      <p class="sub-slogan">Lighting the Path to Successful Trading Journeys</p>
+      <div class="buttons">
+        <button type="button" aria-label="Login to your account" onclick="window.location.href='Log_Reg/LogReg.html';">
+          <!-- User Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 24 24" stroke="#ffffff">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
+              </path>
+            </g>
+          </svg>
+          Login
+        </button>
+        <button type="button" aria-label="Register a new account" onclick="window.location.href='Log_Reg/LogReg.html';">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M19.75 14V11.75H22V10.25H19.75V8H18.25V10.25H16V11.75H18.25V14H19.75Z" fill="#ffffff"></path>
+              <path d="M11 4C8.79 4 7 5.79 7 8C7 10.21 8.79 12 11 12C13.21 12 15 10.21 15 8C15 5.79 13.21 4 11 4Z"
+                fill="#ffffff"></path>
+              <path d="M3 18C3 15.34 8.33 14 11 14C13.67 14 19 15.34 19 18V20H3V18Z" fill="#ffffff"></path>
+            </g>
+          </svg>
+          Register
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERO SECTION 2 -->
+  <section class="iframe-chart-section">
+    <div class="ticker">
+      <iframe src="Ticker/Ticker.html" width="100%" height="100%" frameborder="0" style="border: none;"></iframe>
+    </div>
+
+    <div class="header-text">
+      <h1>From Forex to Crypto, <br>trade what moves the world.</h1>
+      <p>Because timing isn't everything—execution is, and with our platform, you can seize opportunities with precision
+        and confidence.</p>
+    </div>
+    <div class="symbol_overview">
+      <iframe src="Symbol Overview/Symbol.html" width="100%" height="100%" frameborder="0"
+        style="border: none;"></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div>
+    <footer>
+      <p>&copy; 2023 ForexBeacon. All rights reserved.</p>
+      <p>
+        <a href="About/About.html">About Us</a> |
+        <a href="Support/support.html">Support</a> |
+        <a href="FAQ/FAQ.html">FAQ</a> |
+        <a href="Contact/contact.html">Contact</a>
+      </p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>
